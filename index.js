@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
   }
 });
 var text = "...";
-var quiz = json;
+var quiz = "...";
 
 app.post('/postText', function(req, res) {
     text = req.query.text
