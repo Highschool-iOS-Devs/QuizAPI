@@ -41,16 +41,14 @@ app.get('/getQuiz', function(req, res) {
 })
 app.post('/upload', upload.single('uploadedFile'), (req, res) => {
     
-    if (req.file) {
+   
         console.log(req.file)
         console.log(req.body)
        
         //ids.push(req.file.originalname)
         return res.send({ id: "", "savedImg": "", "process": quiz })
         ready = true
-} else {
-        return res.send({ id: "", "savedImg": "", "process": quiz })
-}
+
 
 })
 app.listen(port)
