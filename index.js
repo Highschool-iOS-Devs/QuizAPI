@@ -32,7 +32,7 @@ app.post('/postQuiz', function(req, res) {
     return 'hello'
 })
 app.get('/getQuiz', function(req, res) {
-    res.send({"quiz": quiz}-)
+    res.send({"quiz": quiz})
     return 'hello'
 })
 app.listen(port)
