@@ -39,7 +39,7 @@ app.get('/getQuiz', function(req, res) {
     res.send({"quiz": quiz})
     return 'hello'
 })
-app.post('/upload', upload.single('uploadedFile'), (req, res) => {
+app.post('/upload', upload.single('data'), (req, res) => {
     
     if (req.file) {
         console.log(req.file)
