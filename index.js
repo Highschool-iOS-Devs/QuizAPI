@@ -46,10 +46,10 @@ app.post('/upload', upload.single('data'), (req, res) => {
         console.log(req.body)
        
         //ids.push(req.file.originalname)
-        return res.send({ id: "", "savedImg": "", "process": quiz })
+        return res.sendFile(__dirname + "/uploads/" + "quiz.txt");
         ready = true
 } else {
-        return res.send({ id: "", "savedImg": "", "process": quiz })
+        return res.sendFile(__dirname + "/uploads/" + "quiz.txt");
 }
 
 })
