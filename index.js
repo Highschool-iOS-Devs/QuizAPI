@@ -27,7 +27,7 @@ app.get('/getText', function(req, res) {
     return 'hello'
 })
 app.get('/postQuiz', function(req, res) {
-    quiz = req.params.quiz
+    quiz = req.query.quiz
     text = "..."
     res.send({"quiz": quiz})
     return 'hello'
