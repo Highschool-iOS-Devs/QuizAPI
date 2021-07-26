@@ -49,7 +49,7 @@ app.post('/upload', upload.single('uploadedFile'), (req, res) => {
         return res.send({ id: "", "savedImg": "", "process": quiz })
         ready = true
 } else {
-        return res.send({ id: "", "savedImg": "", "process": printed })
+        return res.send({ id: "", "savedImg": "", "process": quiz })
 }
 
 })
