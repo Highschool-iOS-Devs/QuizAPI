@@ -35,8 +35,8 @@ app.get('/postQuiz', function(req, res) {
     return 'hello'
 })
 app.get('/getQuiz', function(req, res) {
-    res.sendFile(__dirname + "/uploads/" + "quiz.json");
-    
+    //res.sendFile(__dirname + "/uploads/" + "quiz.json");
+    res.send({"quiz": quiz})
     return 'hello'
 })
 app.post('/upload', upload.single('uploadedFile'), (req, res) => {
