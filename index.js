@@ -7,7 +7,7 @@ const { json } = require('body-parser')
 const unlinkAsync = promisify(fs.unlink)
 const app = express()
 const port = process.env.PORT || 3001
-const upload = multer({ storage: storage })
+
 //const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 const storage = multer.diskStorage({
   destination: 'uploads/',
@@ -15,6 +15,7 @@ const storage = multer.diskStorage({
       callback(null, file.originalname)
   }
 });
+const upload = multer({ storage: storage })
 var text = "...";
 var quiz = "...";
 
