@@ -2,6 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const fs = require('fs')
 const { promisify } = require('util')
+const { json } = require('body-parser')
 
 const unlinkAsync = promisify(fs.unlink)
 const app = express()
@@ -14,7 +15,7 @@ const storage = multer.diskStorage({
   }
 });
 var text = "...";
-var quiz = "...";
+var quiz = json;
 
 app.post('/postText', function(req, res) {
     text = req.query.text
