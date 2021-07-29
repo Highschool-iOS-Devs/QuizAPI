@@ -29,22 +29,22 @@ app.get('/getText', function(req, res) {
     return 'hello'
 })
 app.get('/postQuiz', function(req, res) {
-    quiz = req.query
+    quiz = req.query.quiz
     text = "..."
     res.send({"quiz": quiz})
     return 'hello'
 })
 app.get('/getQuiz', function(req, res) {
-    res.sendFile(__dirname + "/uploads/" + "quiz.txt");
-    //res.send({"quiz": quiz})
+    //res.sendFile(__dirname + "/uploads/" + "quiz.txt");
+    res.send({"quiz": quiz})
     return 'hello'
 })
-app.post('/upload', upload.single(), (req, res) => {
+app.post('/upload', upload.single('uploadedImage'), (req, res) => {
     
     if (req.file) {
         console.log(req.file)
         console.log(req.body)
-       
+        
         //ids.push(req.file.originalname)
         return res.sendFile(__dirname + "/uploads/" + "quiz.txt");
         ready = true
