@@ -7,7 +7,7 @@ const { json } = require('body-parser')
 const unlinkAsync = promisify(fs.unlink)
 const app = express()
 const port = process.env.PORT || 3001
-
+var result = {};
 //const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 const storage = multer.diskStorage({
   destination: 'uploads/',
@@ -29,14 +29,21 @@ app.get('/getText', function(req, res) {
     return 'hello'
 })
 app.get('/postQuiz', function(req, res) {
-    quiz = String(req.quiz)
+    result = req.query;
+    console.log(result)
+    console.log(req.query)
+    console.log(JSON.stringify(req.query))
+
+    //print(quiz)
+    //print(req.query.quiz)
     text = "..."
-    res.send({"quiz": quiz})
+    res.send(quiz)
     return 'hello'
 })
 app.get('/getQuiz', function(req, res) {
     //res.sendFile(__dirname + "/uploads/" + "quiz.txt");
-    res.send({"quiz": quiz})
+    console.log(result);
+    res.send(result)
     return 'hello'
 })
 app.post('/upload', upload.single('uploadedImage'), (req, res) => {
