@@ -20,6 +20,7 @@ var text = "...";
 var quiz = "...";
 
 app.post('/postText', function(req, res) {
+    result = {}
     text = req.query.text
     res.send(text)
     return 'hello'
