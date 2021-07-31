@@ -29,7 +29,7 @@ app.get('/getText', function(req, res) {
     return 'hello'
 })
 app.get('/postQuiz', function(req, res) {
-    result = JSON.stringify(req.query);
+    result = req.query;
     console.log(result)
     console.log(req.query)
     console.log(JSON.stringify(req.query))
