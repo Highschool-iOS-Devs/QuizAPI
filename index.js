@@ -20,7 +20,6 @@ var text = "...";
 var quiz = "...";
 
 app.post('/postText', function(req, res) {
-    result = {}
     text = req.query.text
     res.send(text)
     return 'hello'
@@ -30,7 +29,7 @@ app.get('/getText', function(req, res) {
     return 'hello'
 })
 app.get('/postQuiz', function(req, res) {
-    result = req.query;
+    result = JSON.stringify(req.query);
     console.log(result)
     console.log(req.query)
     console.log(JSON.stringify(req.query))
@@ -45,7 +44,6 @@ app.get('/getQuiz', function(req, res) {
     //res.sendFile(__dirname + "/uploads/" + "quiz.txt");
     console.log(result);
     res.send(result)
-    
     return 'hello'
 })
 app.post('/upload', upload.single('uploadedImage'), (req, res) => {
